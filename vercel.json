@@ -1,0 +1,15 @@
+{
+  "buildCommand": "pip install -r backend/requirements.txt",
+  "outputDirectory": ".",
+  "framework": "fastapi",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/backend/main.py"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/frontend/index.html"
+    }
+  ]
+}

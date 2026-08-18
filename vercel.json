@@ -1,15 +1,14 @@
 {
-  "buildCommand": "pip install -r backend/requirements.txt",
-  "outputDirectory": ".",
-  "framework": "fastapi",
-  "rewrites": [
+  "builds": [
     {
-      "source": "/api/(.*)",
-      "destination": "/backend/main.py"
-    },
+      "src": "backend/main.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/frontend/index.html"
+      "src": "/api/(.*)",
+      "dest": "backend/main.py"
     }
   ]
 }
